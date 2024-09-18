@@ -7,6 +7,34 @@ header h1{
     font-weight: bold;
 }
 
+header h1:hover{
+    animation-name: scaler;
+    animation-duration:2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes scaler {
+    0%{
+        color: #45553D;
+    }
+    25%{
+        color: #6d7e5f;
+    }
+    50%{
+        color: #92a079;
+    }
+    75%{
+        color: #c4c8ac;
+    }
+    100%{
+        color: #0D120E;
+    }
+}
+
 .header-actions{
     overflow: hidden;
 }
@@ -20,6 +48,7 @@ header h1{
 nav{
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 header{
@@ -28,6 +57,7 @@ header{
     justify-content: space-between;
     align-items: center;
     position: absolute;
+    z-index: 10;
 }
 
 .menu-items{
@@ -49,16 +79,16 @@ header{
     font-family: "Dosis", sans-serif;
     font-weight: 700;
     text-transform: capitalize;
+    font-size:17px;
 }
 
 .menu-items a:hover,header h1:hover{
-    color: #45553D ;
+    color: #45553D;
+    text-shadow: 10px 10px 22px -1px #92a079;
+    cursor: pointer;
+   
 }
 
-.header-actions img:hover{
-    filter: drop-shadow(0px 100px 0 #45553D);
-    transform: translateY(-100px);
-}
 
 .header-actions{
     width: 150px;
@@ -70,7 +100,7 @@ header{
 .search-bar {
     position: absolute;
     z-index: 1;
-    margin-left: 900px;
+    margin-left: 890px;
     padding: 5px;
     border: 1px solid #ccc;
     display: inline-block;
@@ -92,8 +122,8 @@ header{
 input[type="text"]{
    border-radius:100px;
    padding: 10px;
-   transition: width 1.3s ;
 }
+
 
 .banner-container{
     display: flex;   
@@ -111,7 +141,7 @@ input[type="text"]{
     width: 100%;
     height: 750px;
     object-fit: cover;
-    position:relative;
+    position: relative;
     top: 0;
     z-index: -1;
     object-position: 0% 60%;
@@ -193,21 +223,51 @@ input[type="text"]{
     background-color: white;
     border-radius: 10px;
     box-shadow: 10px 10px 22px -1px rgba(232,233,224,0.85);
-    width: 290px;
+    width: 290px;  
 }
 
 .services li:hover{
     scale: 1.1;
+    box-shadow: 10px 10px 22px -1px #92a079;
+    /* animation: spin 5s 0.5s ease; */
 }
+
+
+/* @keyframes spin {
+    0%{
+        
+    }
+    50%{
+        scale: 1.1;
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+} */
+
 
 .services img{
     width: 60px;
+}
+
+.services img:hover{
+    animation: spin 1s ease-in-out;
+}
+
+@keyframes spin {
+    0%{
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 .services h3{
     margin-bottom: 2px;
     color: rgba(0, 0, 0, 0.85);
     font-size: 16px;
+    font-weight: 800;
 }
 
 .services h5{
@@ -215,25 +275,31 @@ input[type="text"]{
     color: #808080;
 }
 
+
+
 /* PRODUCTS.JSX CSS */
 .product-container{
     font-family: "Sacramento", cursive;
     text-align: center;
     margin-top: 50px;
     font-size: 18px;
+    display: flex;
+    justify-content: center;
 }
 
 .product-container h1{
     position: relative;
+    height: 45px;
 }
 
 .product-container h1::before{
     content: '';
     position: absolute;
     bottom: 0;
-    left: inset;
+    left: 40px;
     background-color: #45553D;
-    width: 90px;
+    width: 80px;
     height: 3px;
     border-radius: 5px;
 }
+
