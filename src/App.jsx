@@ -6,6 +6,8 @@ import banner3 from "./Images/banner3.jpg";
 import banner1 from "./Images/banner.jpg";
 import Products from "./Components/Products";
 import Service from "./Components/Service";
+import ProductAdd from "./Admin/ProductAdd";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const banner = [
@@ -31,7 +33,12 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route path="/Admin/ProductAdd" element={<ProductAdd />} />
+        </Switch>
+      </Router>
       <Banner banner={banner} />
       <Service />
       <Products />
