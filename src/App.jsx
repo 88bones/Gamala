@@ -1,48 +1,17 @@
 import "./App.css";
-import NavBar from "./Components/NavBar";
-import Banner from "./Components/Banner";
-import banner2 from "./Images/banner2.jpg";
-import banner3 from "./Images/banner3.jpg";
-import banner1 from "./Images/banner.jpg";
-import Products from "./Components/Products";
-import Service from "./Components/Service";
-import ProductAdd from "./Admin/ProductAdd";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
-  const banner = [
-    {
-      name: banner1,
-      title: "Bring Nature Home",
-      info: "Explore a curated collection of indoor plants perfect for any space. Freshen up your living room or workspace with easy-to-care-for greens!",
-      buttonText: "Shop & Explore",
-    },
-    {
-      name: banner2,
-      title: "Air-Purifying Plants",
-      info: "Breathe easy with our selection of plants that purify the air naturally. Perfect for bedrooms, living rooms, and office spaces.",
-      buttonText: "Shop & Explore",
-    },
-    {
-      name: banner3,
-      title: "Rare & Exotic",
-      info: "Looking for something unique? Explore our rare and exotic plants that are sure to make a statement.",
-      buttonText: "Shop & Explore",
-    },
-  ];
+import HomePage from "./Pages/HomePage";
+import NavBar from "./Components/NavBar";
 
+function App() {
   return (
-    <>
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route path="/Admin/ProductAdd" element={<ProductAdd />} />
-        </Switch>
-      </Router>
-      <Banner banner={banner} />
-      <Service />
-      <Products />
-    </>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
 

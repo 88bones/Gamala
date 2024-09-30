@@ -280,9 +280,13 @@ input[type="text"]{
 /* PRODUCTS.JSX CSS */
 .product-container{
     font-family: "Sacramento", cursive;
-    text-align: center;
     margin-top: 50px;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.h1{
     display: flex;
     justify-content: center;
 }
@@ -290,16 +294,40 @@ input[type="text"]{
 .product-container h1{
     position: relative;
     height: 45px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-container h1::before{
     content: '';
     position: absolute;
     bottom: 0;
-    left: 40px;
     background-color: #45553D;
     width: 80px;
     height: 3px;
     border-radius: 5px;
 }
+.product-items-container{
+    display: flex;
+    justify-content: center;
+}
+.product-items{
+    width: 70%;
+}
+
+.product-long{
+    background-color: pink;
+    width: 30%;
+}
+
+.product-long img{
+    margin-top: 20px;
+    width: 300px;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    object-position: -420px 5%;
+}
+
 

@@ -5,7 +5,7 @@ import cart from "../Images/cart.png";
 
 const NavBar = () => {
   const MenuItems = [
-    { name: "Home", path: "" },
+    { name: "Home", path: "/" },
     { name: "Shop", path: "" },
     { name: "New Arrivals", path: "" },
     { name: "About Us", path: "" },
@@ -27,7 +27,7 @@ const NavBar = () => {
           <ul type="none">
             {MenuItems.map((item, index) => (
               <li key={index}>
-                <a href={item.path}>{item.name}</a>
+                <Link to={item.path}>{item.name}</Link>
               </li>
             ))}
           </ul>
