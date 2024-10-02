@@ -5,6 +5,7 @@ import banner2 from "../Images/banner2.jpg";
 import banner3 from "../Images/banner3.jpg";
 import banner1 from "../Images/banner.jpg";
 import Service from "../Components/Service";
+import Products from "../Components/Products";
 
 const HomePage = () => {
   const banner = [
@@ -30,9 +31,9 @@ const HomePage = () => {
 
   return (
     <div>
-      <NavBar />
       <Banner banner={banner} />
       <Service />
+      <Products />
     </div>
   );
 };
