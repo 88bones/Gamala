@@ -6,6 +6,7 @@ import banner3 from "../Images/banner3.jpg";
 import banner1 from "../Images/banner.jpg";
 import Service from "../Components/Service";
 import Products from "../Components/Products";
+import Footer from "../Components/Footer";
 
 const HomePage = () => {
   const banner = [
@@ -34,6 +35,7 @@ const HomePage = () => {
       <Banner banner={banner} />
       <Service />
       <Products />
+      <Footer />{" "}
     </div>
   );
 };

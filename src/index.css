@@ -321,25 +321,26 @@ input[type="text"]{
     height: 300px;  
     object-fit: contain;
     mix-blend-mode: multiply;
-    aspect-ratio: 1/1;
+    aspect-ratio:  auto 1/1;
+    object-position: 50% 70%;
 }
 
 
 #product-box{
     display: grid;
-    grid-template-columns: repeat(0, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     position: relative;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .small-products{
-
     font-size: 12px;
     display: flex;
+    justify-self: center;
     text-align: center;
-    margin-top: 20px;
     border-radius: 10px;
     font-family: "Dosis", sans-serif;
 }
@@ -563,3 +564,171 @@ ul .small-products{
     scale: 1.1;
     box-shadow: 0px 0px 4px 1px rgba(232,233,224,0.85);
 }
+
+/* FOOTER */
+
+.footer{
+    margin-top: 20px;
+    border-top: 1px solid rgba(232,233,224,0.85);
+
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    font-family: "Dosis", sans-serif;
+  }
+  
+  .footer-section {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .footer-section ul li:hover {
+    color: #000;
+  }
+  
+  .logo-social {
+    text-align: center;
+  }
+  
+  .logo-social h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .social-media {
+    margin-bottom: 15px;
+  }
+  
+  .social-media i {
+    font-size: 20px;
+    margin: 0 10px;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .social-media i:hover {
+    color: #000;
+  }
+  
+  .apps img {
+    width: 120px;
+    margin: 10px;
+  }
+  
+  footer p {
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-section {
+      margin-bottom: 30px;
+    }
+  }
+
+  .footer-section h2{
+    font-family: "Sacramento", cursive;
+    font-size: 48px;
+  }
+  
+/* For Tablets and iPads */
+@media (max-width: 1024px) {
+    .banner img {
+      height: 500px;
+    }
+    .product-items-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .product-long img {
+      width: 300px;
+      object-position: center;
+    }
+    .overlay h2 {
+      font-size: 48px;
+    }
+  }
+  
+  /* For Smartphones */
+  @media (max-width: 768px) {
+    header {
+      width: 90%;
+    }
+    .menu-items {
+      width: 100%;
+    }
+    .services ul {
+      flex-direction: column;
+    }
+    .services li {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .product-items-container {
+      grid-template-columns: 1fr;
+    }
+    .product-long img {
+      width: 100%;
+    }
+    .overlay h2 {
+      font-size: 38px;
+    }
+  }
+  
+  /* For small smartphones (under 480px) */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 36px;
+    }
+    .overlay h2 {
+      font-size: 32px;
+    }
+    .footer-section h4 {
+      font-size: 14px;
+    }
+    .social-media i {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu-items ul {
+      display: none;
+    }
+    .menu-toggle {
+      display: block;
+    }
+  }
+
+
+  /* SHOP */
+
+

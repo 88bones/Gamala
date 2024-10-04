@@ -61,7 +61,9 @@ const Products = () => {
             {Products.map((product, index) => (
               <div className={`small-products small-products-${index + 1}`}>
                 <li key={index}>
-                  <img src={product.image} alt="" />
+                  <Link to="#">
+                    <img src={product.image} alt="" />
+                  </Link>
                   <h2>{product.name}</h2>
                   <h3>Rs. {product.price}</h3>
                 </li>
