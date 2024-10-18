@@ -6,6 +6,8 @@ import NavBar from "./Components/NavBar";
 import Shop from "./Pages/Shop";
 import NewArrivals from "./Pages/NewArrivals";
 import AboutUs from "./Pages/AboutUs";
+import Register from "./Pages/Register";
+import AdminDash from "./Pages/AdminDash";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/newarrivals" element={<NewArrivals />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/admindash" element={<AdminDash />} />
       </Routes>
     </Router>
   );

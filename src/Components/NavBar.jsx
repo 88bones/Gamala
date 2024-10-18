@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   const MenuItems = [
     { name: "Home", path: "/" },
-    { name: "Shop", path: "../Pages/Shop" },
-    { name: "New Arrivals", path: "../Pages/NewArrivals" },
-    { name: "About Us", path: "../Pages/AboutUs" },
+    { name: "Shop", path: "/Shop" },
+    { name: "New Arrivals", path: "/NewArrivals" },
+    { name: "About Us", path: "/AboutUs" },
+    { name: "Admin", path: "/AdminDash" },
   ];
 
   const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -38,13 +39,13 @@ const NavBar = () => {
         </div>
 
         <div className="header-actions">
-          <a href="#" className="search-button" onClick={toggleSearchBar}>
+          <Link to="#" className="search-button" onClick={toggleSearchBar}>
             <img src={search} alt="search" />
-          </a>
+          </Link>
 
-          <a href="#" onClick={(e) => e.preventDefault()}>
+          <Link to="/Register">
             <img src={account} alt="" />
-          </a>
+          </Link>
           <a href="#" onClick={(e) => e.preventDefault()}>
             <img src={cart} alt="" />
           </a>

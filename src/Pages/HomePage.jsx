@@ -35,7 +35,7 @@ const HomePage = () => {
       <Banner banner={banner} />
       <Service />
       <Products />
-      <Footer />{" "}
+      <Footer />
     </div>
   );
 };
