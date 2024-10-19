@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const AddProduct = () => {
   const [pname, setPname] = useState("");
@@ -24,14 +25,33 @@ const AddProduct = () => {
 
   const handleChangeImage = (e) => {
     const file = e.target.files[0];
-    setImage(file); // Update this line to set the correct state
+    setImage(file);
     setPreview(URL.createObjectURL(file));
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
-    // Handle the form submission (e.g., sending data to an API)
-    setResult(`Product added!`);
+    e.preventDefault();
+    const url = "http://localhost:8000/AddProduct.php";
+
+    let fData = new FormData();
+    fData.append("pname", pname);
+    fData.append("ptype", ptype);
+    fData.append("price", price);
+    fData.append("info", info);
+    fData.append("image", image);
+
+    axios
+      .post(url, fData)
+      .then((response) => {
+        setResult("Product Added!" + response.data);
+        setPname("");
+        setPtype("");
+        setPrice("");
+        setInfo("");
+        setImage(null);
+        setPreview(null);
+      })
+      .catch((error) => setResult("Error: " + error.message));
   };
 
   return (
@@ -83,10 +103,11 @@ const AddProduct = () => {
             type="file"
             id="image"
             name="image"
-            value={pname}
             onChange={handleChangeImage}
-            required
+            accept="image/*"
           />
+          <br />
+          {preview && <img src={preview} alt="Image Preview" width="200" />}
           <br />
           <div className="product-resullt">
             <span>{result}</span>
